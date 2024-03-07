@@ -1,0 +1,155 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(200, 191, 231);
+    font-family: helvetica;
+    color: rgb(102, 51, 153);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#conteudo{
+   background-color: rgb(232, 224, 255);
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 15px 15px 15px rgba(102, 51, 153, 0.24);
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   width: 95%;
+   max-width: 400px;
+   box-sizing: border-box;
+}
+
+h1{
+    color: rgb(102, 51, 153);
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.desfazer::after{
+    content: "desfazer X";
+    font-size: 9px;
+    color: rgb(148, 87, 235);
+    border: 1px solid rgb(148, 87, 235);
+    padding: 3px 5px;
+    border-radius: 100px;
+    position: relative;
+    top: -5px;
+    cursor: pointer;
+    transition: all 0.8s;
+}
+
+.desfazer:hover::after{
+    background-color: rgb(148, 87, 235);
+    color: #fff;
+}
+
+.desfazer:active, #adicionar > button:active,
+    p.excluirItem:active{
+    transform: scale(.95)
+}
+
+#adicionar{
+    width: 100%;
+    background-color: rgba(149, 87, 235, 0.233);
+    border-radius: 100px;
+    padding: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+#adicionar > input{
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 0 10px;
+    color: rgb(62, 3, 121)
+}
+
+#adicionar > button{
+    border-radius: 100px;
+    border: 0;
+    background-color: rgba(255, 255, 255, .5);
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    padding: 3px 7px;
+    transition: background-color .8s;
+    cursor: pointer;
+}
+
+#adicionar > button:hover{
+    background-color: rgb(148, 87, 235);
+}
+
+#lista{
+    margin: 0 15px;
+}
+
+    #lista > div.fazer > p.textoItem::before{
+        content: "";
+        border: 1px solid rgb(102, 51, 153);
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 3px;
+        margin-right: 10px;
+        position: relative;
+        top: 3px;
+    }
+
+    #lista > div.feito > p.textoItem::before{
+        content: "✔";
+        border: 1px solid rgb(148, 87, 235);
+        background-color: rgba(149, 87, 235, 0.116);
+        display: inline-block;
+        padding: 3px 4px;
+        max-width: 15px;
+        max-height: 15px;
+        border-radius: 3px;
+        margin-right: 10px;
+        position: relative;
+        top: -3px;
+        font-size: 8.75px;
+        line-height: 1;
+    }
+
+
+p.excluirItem::before{
+    content: X;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#lista > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+p.excluirItem:hover::before{
+    color: red;
+}
+
+#vazio{
+    color: rgb(102, 51, 153);
+    opacity: 0.5;
+}
+
+#lista > div:not(:last-child){
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+#lista > div > p.textoItem{
+    cursor: pointer;
+    line-height: 1.5;
+    margin: 8px 0;
+    width: 90%;
+}
