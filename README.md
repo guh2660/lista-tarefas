@@ -1,0 +1,1 @@
+Este projeto encontra-se em sua fase inicial, com a perspectiva de passar por diversas melhorias ao longo do desenvolvimento. A visão a longo prazo é transformá-lo em um software de notificação para computador, aprimorando sua funcionalidade e usabilidade.
